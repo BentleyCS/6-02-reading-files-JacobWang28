@@ -12,9 +12,30 @@ def toString(fileName):
 
 def longestLine(fileName):
     #Given a file return the longest line from within that file
+    f=open(fileName)
+    longest=""
+    for line in f:
+        if len(line)>len(longest):
+            longest=line
+    f.close()
+    return longest
+
     pass
 
 def toBinary(fileName):
     #Given a file that is only 0's and 1's return a list of the file broken into bytes.
     #An example return might be ['01101001', '00101010', '1010']
+    f=open(fileName)
+    data=""
+    for line in f:
+        data+=line.strip()
+    f.close()
+    byteslist=[]
+    for i in range(0,len(data),8):
+        byteslist.append(data[i:i+8])
+    return byteslist
     pass
+
+print(longestLine("testText.txt.py"))
+print(toBinary("binaryTest.txt.py"))
+
