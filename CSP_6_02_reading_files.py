@@ -36,6 +36,6 @@ def toBinary(fileName):
     return byteslist
     pass
 
-print(longestLine("testText.txt.py"))
-print(toBinary("binaryTest.txt.py"))
+print(longestLine("testText.txt"))
+print(toBinary("binaryTest.txt"))
 
